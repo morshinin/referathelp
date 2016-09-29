@@ -18,7 +18,6 @@
 			<div class="col-md-6">
 				<div class="col-md-3">
 					<p class="workflow_number workflow_number-1">
-						<?php _e( '1', 'referathelp' ); ?>
 					</p>
 				</div>
 				<div class="caption col-md-9">
@@ -26,14 +25,25 @@
 						<?php _e( 'Оформление заказа', 'referathelp' ); ?>
 					</h3>
 					<p>
-						<?php _e( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere vero, tempore itaque, omnis dolore illum! Voluptas ipsum reiciendis mollitia nam', 'referathelp' ); ?>
+						<?php _e( 'Оформить заказ можно двумя способами:', 'referathelp' ); ?>
+						<ul>
+							<li>
+								<?php _e( 'Позвонив по телефону +7 (905) 763 43 52', 'referathelp' ); ?>
+							</li>
+							<li>
+								<?php _e( 'Заполнив ', 'referathelp' ); ?>
+								<a href="#">
+									<?php _e( 'форму заказа', 'referathelp' ); ?>
+								</a>
+							</li>
+						</ul>
+						<?php _e( 'Автор свяжется с вами в течении 1 часа', 'referathelp' ); ?>
 					</p>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="col-md-3">
 					<p class="workflow_number workflow_number-2">
-						<?php _e( '2', 'referathelp' ); ?>
 					</p>
 				</div>
 				<div class="caption col-md-9">
@@ -41,7 +51,7 @@
 						<?php _e( 'Предоплата', 'referathelp' ); ?>
 					</h3>
 					<p>
-						<?php _e( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus aliquid !', 'referathelp' ); ?>
+						<?php _e( 'Для начала работы над вашим заданием, вам необходимо внести предоплату.', 'referathelp' ); ?>
 					</p>
 				</div>
 			</div>
@@ -50,7 +60,6 @@
 			<div class="col-md-6">
 				<div class="col-md-3">
 					<p class="workflow_number workflow_number-3">
-						<?php _e( '3', 'referathelp' ); ?>
 					</p>
 				</div>
 				<div class="caption col-md-9">
@@ -58,14 +67,13 @@
 						<?php _e( 'Выполнение задания', 'referathelp' ); ?>
 					</h3>
 					<p>
-						<?php _e( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At rem ducimus commodi a ad ipsum nihil voluptatibus, tenetur, voluptatem temporibus nesciunt modi numquam possimus blanditiis corporis minus. Alias, pariatur, repellat.', 'referathelp' ); ?>
+						<?php _e( 'После внесения предоплаты, мы приступаем к работе над вашим заданием. Вы можете отслеживать его выполнение, связавшись с автором по почте.', 'referathelp' ); ?>
 					</p>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="col-md-3">
 					<p class="workflow_number">
-						<?php _e( '4', 'referathelp' ); ?>
 					</p>
 				</div>
 				<div class="caption col-md-9">
@@ -73,7 +81,7 @@
 						<?php _e( 'Завершение работы', 'referathelp' ); ?>
 					</h3>
 					<p>
-						<?php _e( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed omnis dicta quidem iusto odio itaque commodi deleniti ullam consectetur, nobis, amet delectus facilis quasi cum odit, veniam at totam perferendis?', 'referathelp' ); ?>
+						<?php _e( 'По выполнении вашего заказа, автор уведомит вас об этом. После чего работа будет отправлена на ваш электронный адрес.', 'referathelp' ); ?>
 					</p>
 				</div>
 			</div>

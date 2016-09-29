@@ -18,8 +18,6 @@ get_header(); ?>
 get_template_part( 'partials/content', 'jumbotron' ); 
 ?>
 
-<div id="content" class="site-content main-padding">
-
 <?php 
 /**
  * Get benefits

@@ -28,6 +28,11 @@
 
 	<div class="entry-content">
 		<?php
+
+			if ( has_post_thumbnail() ) {
+				the_post_thumbnail( 'thumbnail', array( 'class' => 'img-responsive' ) );
+			}
+
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'referathelp' ), array( 'span' => array( 'class' => array() ) ) ),

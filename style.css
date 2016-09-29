@@ -450,6 +450,9 @@ h2 {
 	font-weight: lighter;
 	letter-spacing: 1.6px;
 }
+.home h3 {
+	font-size: 16px;
+}
 .jumbotron .jumbotron_title {
 	color: white;
 }
@@ -457,6 +460,10 @@ h2 {
 	font-weight: lighter;
 	color: white;
 }
+/**
+ * Front page
+ */
+
 /* Делаем попроще заголовок сайта на главной */
 .header {
 	position: fixed;
@@ -464,6 +471,7 @@ h2 {
 	left: 0;
 	top: 0;
 	z-index: 9999;
+	background: rgba(0,0,0,.9);
 }
 .header h1 {
 	margin: 0;
@@ -478,19 +486,30 @@ h2 {
 .benefits .fa {
 	width: 100%;
 }
+/* Область контента */
 .home {
-	background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
-	url(img/bg.jpeg) fixed no-repeat;
+
 }
 	.home #content {
 		background: white;
 	}
+.site-content {
+	padding: 80px 0;
+}
 /* Перекрываем стили бутстрапа */
+.navbar-inverse {
+	background-image: none;
+	border-radius: 0;
+	background-color: inherit;
+	border: none;
+	margin-bottom: 0;
+}
 .page-header {
 	border: none;
 }
 .jumbotron {
-	background: none;
+	background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+	url(img/bg.jpeg) fixed no-repeat;
 }
 .navbar-right {
 	margin-right: 0;
@@ -500,21 +519,34 @@ h2 {
 	padding-left: 0;
 	padding-right: 0;
 }
+.navbar-brand,	/* Вертикально центрируем элементы в шапке */
+.navbar-text,
+.navbar-nav > li > a {
+	line-height: 50px;
+}
+#secondary {
+	padding-top: 16px;	/* Отступ сверху для сайдбара */
+}
 /* Кнопки */
 .btn-xxl {
 	padding-left: 64px;
 	padding-right: 64px;
 	font-weight: lighter;
 }
+/* Benefits */
+.benefits .caption {
+	padding: 0 20px;
+}
 /* Styling workflow section */
 .workflow_number {
-	font-size: 30px;
+	margin-top: 20px;
+	color: #27ae60;
     border: 6px solid;
     width: 100px;
     height: 100px;
     text-align: center;
     border-radius: 50%;
-    line-height: 90px;
+    transform: rotate(45deg);
 }
 	.workflow_number-1 {
 		border-left-color: transparent;
@@ -527,6 +559,22 @@ h2 {
 	}
 	.workflow_number-3 {
 		border-left-color: transparent;
+	}
+	.workflow_number:before {
+	    display: block;
+		content: '4';
+		line-height: 90px;
+    	font-size: 30px;
+    	transform: rotate(-45deg);
+	}
+	.workflow_number-1:before {
+		content: '1';
+	}
+	.workflow_number-2:before {
+		content: '2';
+	}
+	.workflow_number-3:before {
+		content: '3';
 	}
 /* Referathelp helper classes */
 .main-padding {
@@ -544,8 +592,7 @@ h2 {
 }
 .margin-third,
 .services h3,
-.services i,
-.payment-methods i {
+.services i {
 	margin-bottom: 48px;
 }
 .text-inverse {
@@ -566,7 +613,12 @@ h2 {
 	.cta .lead {
 		margin-bottom: 0;
 		padding-top: 10px;
+		font-weight: lighter;
+	    line-height: 1.4;
+	    letter-spacing: 1.3px;
 	}
+/* Payment methods */
+
 
 /* Testimonials */
 .testimonials_text {
@@ -583,3 +635,32 @@ h2 {
 	    font-size: 102px;
 	    color: rgba(0,0,0,.3);
 	}
+	.testimonials small:before {
+		content: none;
+	}
+/* Secondary menu */
+#secondary > li {
+	float: left;
+	margin-right: 48px;
+}
+#secondary li {
+	list-style: none;
+}
+#secondary > li a {
+	color: gray;
+}
+#secondary > li > a {
+	display: block;
+	margin-bottom: 16px;
+	color: black;
+	font-size: 18px;
+}
+#secondary .sub-menu {
+	padding-left: 16px;
+}
+
+/* Footer */
+.site-footer {
+	padding: 80px 0 24px;
+	background: white;
+}

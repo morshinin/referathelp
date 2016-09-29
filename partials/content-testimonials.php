@@ -7,7 +7,7 @@
 * @since referathelp 1.0
 */
 ?>
-<section class="testimonials main-margin">
+<section class="testimonials">
 	<div class="container">
 		<div class="row">
 			<h2 class="text-center">
@@ -16,32 +16,32 @@
 		</div>
 		<div class="row margin-third">
 			<blockquote class="col-md-6">
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<p><strong><?php _e( 'Александр', 'referathelp' ); ?></strong></p>
-					<p>
+					<small>
 						<?php _e( 'Заказ:', 'referathelp' ); ?>
 						<br>
 						<?php _e( 'Курсовая', 'referathelp' ); ?>
-					</p>
+					</small>
 				</div>
-				<div class="col-md-8">
+				<div class="col-md-9">
 					<p class="testimonials_text text-center">
 						<?php _e( 'Отличная работа! Спасибо!', 'referathelp' ); ?>
 					</p>
 				</div>
 			</blockquote>
 			<blockquote class="col-md-6">
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<p><strong><?php _e( 'Ольга', 'referathelp' ); ?></strong></p>
-					<p>
+					<small>
 						<?php _e( 'Заказ:', 'referathelp' ); ?>
 						<br>
 						<?php _e( 'Реферат', 'referathelp' ); ?>
-					</p>
+					</small>
 				</div>
-				<div class="col-md-8">
+				<div class="col-md-9">
 					<p class="testimonials_text text-center">
-						<?php _e( 'В который раз выручили. Спасибо!', 'referathelp' ); ?>
+						<?php _e( 'В который раз выручили. Спасибо! Обязательно буду еще обращаться. Сессия уже скоро :Р', 'referathelp' ); ?>
 					</p>
 				</div>
 			</blockquote>

@@ -23,7 +23,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'referathelp' ); ?></a>
 	<header class="header">
-		<div class="container-fluid">
+		<div class="container">
 			<nav class="navbar navbar-inverse" role="navigation"> 
 			<!-- Brand and toggle get grouped for better mobile display --> 
 			  <div class="navbar-header"> 
@@ -63,3 +63,4 @@
 			</nav>
 		</div>	<!-- .container -->
 	</header>	<!-- .header -->
+<div id="content" class="site-content">

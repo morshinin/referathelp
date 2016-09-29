@@ -15,15 +15,15 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">
-			<div class="row">
+			<div class="row margin-third">
 			    <?php /* Secondary navigation */
 			    wp_nav_menu( array(
 			      'theme_location' => 'secondary',
 			      'menu_id' => 'secondary',
 			      'container'         => 'div',
-		          'container_class'   => 'col-md-4',
+		          'container_class'   => '',
 		          'container_id'      => '',
-		          'menu_class'        => ''
+		          'menu_class'        => 'list-unstyled'
 		         ));
 			    ?>
 			</div>
@@ -43,12 +43,12 @@
 			      'container'         => 'div',
 		          'container_class'   => '',
 		          'container_id'      => '',
-		          'menu_class'        => ''
+		          'menu_class'        => 'list-unstyled list-inline text-center'
 		         ));
 			    ?>
 			</div>
 			<div class="row">
-				<div class="site-info">
+				<div class="site-info text-center">
 					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'referathelp' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'referathelp' ), 'WordPress' ); ?></a>
 					<span class="sep"> | </span>
 					<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'referathelp' ), 'referathelp', '<a href="http://morshinin.ru/front-end" rel="designer">Mikhail Morshinin</a>' ); ?>
