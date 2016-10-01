@@ -43,6 +43,33 @@ get_header(); ?>
 
 		endif; ?>
 
+			<?php 
+				/**
+				 * Выводим 3 вопроса-ответа
+				 */
+				global $post;
+				$args = array(
+						'post_type'	=>	'faq',
+						'posts_per_page'	=>	3,
+						'tax_query'		=>	array(
+								array(
+										'taxonomy'	=>	'questionstype',
+										'terms'		=>	'25'
+									),
+							),						
+					);
+				$posts = get_posts( $args );
+
+				if ( $posts ) {
+					foreach ($posts as $post) : setup_postdata( $post );
+						$title = get_the_title();
+						echo $title;
+				endforeach;
+				}
+				wp_reset_postdata();
+
+			?>
+
 		</main><!-- #main -->
 		<?php get_sidebar(); ?>
 	</div><!-- #primary -->

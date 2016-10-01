@@ -12,38 +12,11 @@ get_header(); ?>
 	<div id="primary" class="content-area container">
 		<main id="main" class="site-main col-md-8" role="main">
 
-		<?php
-		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'faq' );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-		
+				
 		<?php 
+			/**
+			 * Хитрый цикл, который выводит все таксономии типа questionstype(Темы вопросов), относящиеся к типу записи Вопрос-ответ(faq) как заголовки. А под каждым заголовком все посты, относящиеся к этой таксономии.
+			 */
 
 			$args = array( 'posts_per_page' => -1, 'post_type' => 'faq' );
 
@@ -53,11 +26,15 @@ get_header(); ?>
 			while ( $query->have_posts() ) {
 				$query->the_post();
 
-				$a = get_the_title();
-				$categories = get_terms( 'questionstype' );
+				$id = get_the_ID();
+				$a = '<h3><a data-toggle="collapse" href="#collapse-' . $id . '" aria-expanded="false" aria-controls="collapseExample">' . get_the_title() . '</a></h3>
+						<div class="entry-content collapse" id="collapse-' . $id . '">
+							<div class="well">' . get_the_content() . '</div>
+					</div>';
+				$categories = get_the_terms( get_the_ID(), 'questionstype' );
 
 				foreach ($categories as $key => $category) {
-					$b = $category->name;
+					$b = '<h2>' . $category->name . '</h2>';
 				}
 
 				$q[$b][] = $a;

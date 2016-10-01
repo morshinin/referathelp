@@ -102,6 +102,15 @@ function referathelp_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
+		'name'          => esc_html__( 'Боковая колонка посадочной страницы', 'referathelp' ),
+		'id'            => 'sidebar-landing',
+		'description'   => esc_html__( 'Добавьте сюда все, что хотите видеть в боковой колонке на посадочных страницах работ на заказ.', 'referathelp' ),
+		'before_widget' => '<section id="%1" class="widget %2">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
 		'name' 			=>	esc_html__('УТП на главной', 'referathelp'),
 		'id' 			=>	'sidebar-herounit',
 		'description'	=>	'Вы можете задать заголовок и подзаголовок',
@@ -146,6 +155,8 @@ function referathelp_scripts() {
 	 * Bootstrap js
 	 */
 	wp_enqueue_script( 'referathelp-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery') );
+	// Инициализируем свои скрипты
+	wp_enqueue_script( 'referathelp-my-scripts', get_template_directory_uri() . '/js/my-scripts.js', array( 'jquery' ) );
 
 	/**
 	 * Slick slider js
@@ -211,7 +222,7 @@ function referathelp_reg_post_types() {
 			'has_archive'			=>	true,
 			'menu_position'			=>	5,
 			'menu_icon'				=>	'dashicons-id-alt',
-			'supports'				=>	array( 'title', 'editor' )
+			'supports'				=>	array( 'title', 'editor', 'thumbnail' )
 		);
 	register_post_type( 'landing', $args );
 // Акции
@@ -262,6 +273,30 @@ function referathelp_reg_post_types() {
 			'supports'				=>	array( 'title', 'editor' )
 		);
 	register_post_type( 'faq', $args );
+// Отзывы
+	$labels = array(
+			'name'					=>	__( 'Отзывы', 'referathelp' ),
+			'singular_name'			=>	__( 'Отзыв', 'referathelp' ),
+			'add_new_item'			=>	__( 'Добавить новый отзыв', 'referathelp' ),
+			'add_new'				=>	__( 'Добавить отзыв', 'referathelp' ),
+			'new_item'				=>	__( 'Новый отзыв', 'referathelp' ),
+			'edit_item'				=>	__( 'Редактировать отзыв', 'referathelp' ),
+			'view_item'				=>	__( 'Посмотреть отзыв', 'referathelp' ),
+			'all_items'				=>	__( 'Все отзывы', 'referathelp' ),
+			'search_items'			=>	__( 'Искать отзывы', 'referathelp' ),
+			'not_found'				=>	__( 'Отзывов не найдено', 'referathelp' ),
+			'not_found_in_trash'	=>	__( 'В корзине отзывов не найдено', 'referathelp' )
+		);
+	$args = array(
+			'labels'				=>	$labels,
+			'description'			=>	__( 'Записи отзывов клиентов', 'referathelp' ),
+			'public'				=>	true,
+			'has_archive'			=>	true,
+			'menu_position'			=>	5,
+			'menu_icon'				=>	'dashicons-smiley',
+			'supports'				=>	array( 'title', 'editor' )
+		);
+	register_post_type( 'rh_testimonials', $args );
 }
 /**
  * Добавляем новую таксономию для постов типа вопрос-ответ
@@ -285,6 +320,25 @@ function referathelp_tax_type() {
 			'rewrite'		=>	true
 		);
 	register_taxonomy( 'questionstype', 'faq', $args );
+	register_taxonomy_for_object_type( 'questionstype', 'faq' );
+	// Тип работ на заказ(курсовая, дипломная и т.п.)
+	$labels = array(
+			'name'			=>	__( 'Тип работ', 'referathelp' ),
+			'singular_name'	=>	__( 'Типы работ', 'referathelp' ),
+			'search_items'	=>	__( 'Поиск типов работ', 'referathelp' ),
+			'edit_item'		=>	__( 'Редактирование типов работ', 'referathelp' ),
+			'update_item'	=>	__( 'Обновить типы работ', 'referathelp' ),
+			'add_new_item'	=>	__( 'Добавить тип работ', 'referathelp' ),
+			'new_item_name'	=>	__( 'Название типа работ', 'referathelp' ),
+			'not_found'		=>	__( 'Типов работ не найдено', 'referathelp' )	
+		);
+	$args = array(
+			'labels'		=>	$labels,
+			'hierarchical'	=>	true,
+			'query_var'		=>	true,
+			'rewrite'		=>	true
+		);
+	register_taxonomy( 'customworktype', 'landing', $args );
 }
 
 /**

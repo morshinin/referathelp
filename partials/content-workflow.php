@@ -14,6 +14,13 @@
 				<?php _e( 'Схема работы', 'referathelp' ); ?>
 			</h2>
 		</div>
+		<div class="row">
+			<?php 
+				if ( ! is_front_page() ) {
+					the_content();
+				}
+			?>
+		</div>
 		<div class="row margin-secondary">
 			<div class="col-md-6">
 				<div class="col-md-3">

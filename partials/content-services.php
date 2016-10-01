@@ -16,111 +16,44 @@
 		</div>
 		<div class="row">
 			<div class="services_carousel">
-				<div class="text-center">
-					<h3>
-						<?php _e( 'Реферат', 'referathelp' ); ?>
-					</h3>
-					<i class="fa fa-file-text-o fa-2x text-center"></i>
-					<div class="caption">
-						<p>
-							<?php _e( 'от 2 дней', 'referathelp' ); ?>
-						</p>
-						<p>
-							<?php _e( 'от 3000', 'referathelp' ); ?>
-						</p>
-						<p><a href="#" class="btn btn-link"><?php _e( 'Заказать >>', 'referathelp' ); ?></a></p>
-					</div>
-				</div>
-				<div class="text-center">
-					<h3>
-						<?php _e( 'Курсовая', 'referathelp' ); ?>
-					</h3>
-					<i class="fa fa-university fa-2x text-center"></i>
-					<div class="caption">
-						<p>
-							<?php _e( 'от 2 дней', 'referathelp' ); ?>
-						</p>
-						<p>
-							<?php _e( 'от 3000', 'referathelp' ); ?>
-						</p>
-						<p><a href="#" class="btn btn-link"><?php _e( 'Заказать >>', 'referathelp' ); ?></a></p>
-					</div>
-				</div>
-				<div class="text-center">
-					<h3>
-						Дипломная
-					</h3>
-					<i class="fa fa-graduation-cap fa-2x text-center"></i>
-					<div class="caption">
-						<p>
-							<?php _e( 'от 2 дней', 'referathelp' ); ?>
-						</p>
-						<p>
-							<?php _e( 'от 3000', 'referathelp' ); ?>
-						</p>
-						<p><a href="#" class="btn btn-link"><?php _e( 'Заказать >>', 'referathelp' ); ?></a></p>
-					</div>
-				</div>
-				<div class="text-center">
-					<h3>
-						Лабораторная
-					</h3>
-					<i class="fa fa-flask fa-2x text-center"></i>
-					<div class="caption">
-						<p>
-							<?php _e( 'от 2 дней', 'referathelp' ); ?>
-						</p>
-						<p>
-							<?php _e( 'от 3000', 'referathelp' ); ?>
-						</p>
-						<p><a href="#" class="btn btn-link"><?php _e( 'Заказать >>', 'referathelp' ); ?></a></p>
-					</div>
-				</div>
-				<div class="text-center">
-					<h3>
-						Эссе
-					</h3>
-					<i class="fa fa-pencil fa-2x text-center"></i>
-					<div class="caption">
-						<p>
-							<?php _e( 'от 2 дней', 'referathelp' ); ?>
-						</p>
-						<p>
-							<?php _e( 'от 3000', 'referathelp' ); ?>
-						</p>
-						<p><a href="#" class="btn btn-link"><?php _e( 'Заказать >>', 'referathelp' ); ?></a></p>
-					</div>
-				</div>
-				<div class="text-center">
-					<h3>
-						Магистерская
-					</h3>
-					<i class="fa fa-book fa-2x text-center"></i>
-					<div class="caption">
-						<p>
-							<?php _e( 'от 2 дней', 'referathelp' ); ?>
-						</p>
-						<p>
-							<?php _e( 'от 3000', 'referathelp' ); ?>
-						</p>
-						<p><a href="#" class="btn btn-link"><?php _e( 'Заказать >>', 'referathelp' ); ?></a></p>
-					</div>
-				</div>
-				<div class="text-center">
-					<h3>
-						Кандидатская
-					</h3>
-					<i class="fa fa-institution fa-2x text-center"></i>
-					<div class="caption">
-						<p>
-							<?php _e( 'от 2 дней', 'referathelp' ); ?>
-						</p>
-						<p>
-							<?php _e( 'от 3000', 'referathelp' ); ?>
-						</p>
-						<p><a href="#" class="btn btn-link"><?php _e( 'Заказать >>', 'referathelp' ); ?></a></p>
-					</div>
-				</div>
+				<?php 
+					global $post;
+					$args = array( 'posts_per_page' => 8, 'post_type' => 'landing' );
+					$landing_posts = get_posts( $args );
+					if ( $posts ) {
+						foreach ( $landing_posts as $post ) : setup_postdata( $post );
+						$title = get_the_title();
+						// $value = array( 'landing_cost', 'landing_time', 'landing_author' );
+						$link = get_the_permalink();
+						$work_date = 'landing_time';
+						$work_cost = 'landing_cost';
+						$field_1 = get_field_object( $work_date );
+						$field_2 = get_field_object( $work_cost );
+						
+						?>
+						<div class="text-center">
+							<h3>
+								<?php echo $title; ?>
+							</h3>
+							<div>
+								<?php the_post_thumbnail( array( 32, 32 ) ); ?>
+							</div>
+							<div class="caption">
+								<p>
+									<?php echo $field_1['value']; ?>
+								</p>
+								<p>
+									<?php echo $field_2['value']; ?>
+								</p>
+								<p><a href="<?php echo $link; ?>" class="btn btn-link"><?php _e( 'Заказать >>', 'referathelp' ); ?></a></p>
+							</div>
+						</div>
+						<?php
+						endforeach;
+					}
+					wp_reset_postdata();
+				 ?>
+				
 			</div>	<!-- .services_carousel -->
 		</div>	<!-- .row -->
 	</div>	<!-- .container -->
