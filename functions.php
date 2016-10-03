@@ -45,6 +45,7 @@ function referathelp_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' 		=> esc_html__( 'Primary', 'referathelp' ),
+		// 'primary_right'	=>	esc_html__( 'Главное меню справа', 'referathelp' ),
 		'secondary'		=>	esc_html__( 'Дополнительное меню', 'referathelp' ),
 		'third'			=>	esc_html__( 'Меню правовой информации', 'referathelp' )
 	) );
@@ -105,6 +106,15 @@ function referathelp_widgets_init() {
 		'name'          => esc_html__( 'Боковая колонка посадочной страницы', 'referathelp' ),
 		'id'            => 'sidebar-landing',
 		'description'   => esc_html__( 'Добавьте сюда все, что хотите видеть в боковой колонке на посадочных страницах работ на заказ.', 'referathelp' ),
+		'before_widget' => '<section id="%1" class="widget %2">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Боковая колонка магазина', 'referathelp' ),
+		'id'            => 'sidebar-shop',
+		'description'   => esc_html__( 'Добавьте сюда все, что хотите видеть в боковой колонке магазина.', 'referathelp' ),
 		'before_widget' => '<section id="%1" class="widget %2">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -348,14 +358,40 @@ function referathelp_tax_type() {
 add_theme_support( 'woocommerce' );
 
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+// remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 15 );
+// Убираем цену из под заголовка на странице работы
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+// Убираем кнопку добавить в корзину из под заголовка на странице работы
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 
 add_action( 'woocommerce_before_single_product_summary', 'comments_template', 30 );
 add_action( 'wpt_footer', 'wpt_footer_cart_link' );
+
+// Добавляем цену на странице работы
+// add_action( 'woocommerce_after_single_product', 'woocommerce_template_single_price', 10 );
+add_action( 'woocommerce_show_fucking_price', 'woocommerce_template_single_price', 10 );
+// Добавляем кнопку добавить в корзину на странице работы
+add_action( 'woocommerce_show_fucking_price', 'woocommerce_template_single_add_to_cart', 30 );
+
+// Change number or products per row to 1
+add_filter('loop_shop_columns', 'loop_columns');
+if (!function_exists('loop_columns')) {
+	function loop_columns() {
+		return 1; // 3 products per row
+	}
+}
+
+// Убираем счетчик количество товаров
+add_filter( 'woocommerce_is_sold_individually', 'wc_remove_all_quantity_fields', 10, 2 );
+function wc_remove_all_quantity_fields( $return, $product ) {
+    return( true );
+}
 
 function wpt_footer_cart_link() {
 

@@ -1,8 +1,8 @@
 <?php
 /**
- * Content wrappers
+ * Product Loop End
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/global/wrapper-end.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/loop/loop-end.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -13,14 +13,8 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     1.6.4
+ * @version     2.0.0
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
 ?>
-			<!-- </div>	.row -->
-		<!-- </section> -->
-	</main><!-- #main -->
-</div><!-- #primary -->
+</div>
+</div>

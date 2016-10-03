@@ -1,8 +1,8 @@
 <?php
 /**
- * Content wrappers
+ * Sidebar
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/global/wrapper-start.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/global/sidebar.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -19,20 +19,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-?>
-<?php 
-	if ( ! is_product() ) {
-?>
-	<div id="primary" class="content-area col-md-8">
-		<main id="main" class="site-main" role="main">
-<?php 
-} else {
-	?>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-	<?php
+if ( ! is_product() ) {
+get_sidebar( 'shop' ); 
 }
 ?>
-<!-- <section class="row no-max pad"> -->
-			<!-- <section class="container"> -->
-				<!-- <div class="row"> -->

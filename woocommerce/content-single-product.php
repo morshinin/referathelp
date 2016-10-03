@@ -37,9 +37,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
-<section class="two-column row no-max pad">
-  <div class="small-12 columns">
-    <div class="row">
+<!-- <section class="two-column row no-max pad"> -->
+<!--   <div class="small-12 columns">
+    <div class="row"> -->
 
           <div class="small-12 medium-7 medium-offset-1 medium-push-4 columns">
         <div class="primary">
@@ -55,8 +55,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 	  </div>
 
-	    <div class="small-12 medium-4 medium-pull-8 columns">
-	  	<div class="secondary">
+	    <div class="col-md-8">
+	  	<!-- <div class="secondary"> -->
 
 		<?php
 			/**
@@ -86,11 +86,46 @@ if ( ! defined( 'ABSPATH' ) ) {
 	?>
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
-
+		
+  <?php /*the_field( 'rh_work_intro' );*/ ?>
 				</div>	
-		  </div>
-  </div>
-</section>
-</div><!-- #product-<?php the_ID(); ?> -->
 
+		  <!-- </div> -->
+ <!--  </div> -->
+  <div class="col-md-4">
+  <table class="table">
+  	<tbody>
+  		<?php 
+  			// $value = array( 'landing_cost', 'landing_time', 'landing_author' );
+  			$fields = get_fields();
+  			// $t_heading = array( 'Цена', 'Срок выполнения', 'Автор', 'Доработка', 'Гарантия' );
+  			/**
+  			 * Собираем все кастомные метаполя и выводим их в таблице. Здесь используются теги плагина Advanced Custom Fields.
+  			 */
+  			if ( $fields ) {
+  				foreach ($fields as $field_name => $value) {
+  					$f_obj = get_field_object( $field_name, false, array( 'load_value' => false ) );
+  					// $f_label = get_field_object();
+  					?>
+  					<tr>
+  						<th>
+  							<?php /*_e( 'Цена', 'referathelp' );*/ ?>
+  							<?php echo $f_obj['label']; ?>
+  						</th>
+  						<td>
+  							<?php echo $value; ?>
+  						</td>
+  					</tr>
+  					<?php
+  				}
+  			}
+  		 ?>
+  	</tbody>
+  </table>
+<?php do_action( 'woocommerce_show_fucking_price' ); ?>
+</div>
+<!-- </section> -->
+</div><!-- #product-<?php the_ID(); ?> -->
+<!-- <div class="col-md-4"> -->
 <?php do_action( 'woocommerce_after_single_product' ); ?>
+<!-- </div> -->

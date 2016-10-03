@@ -63,7 +63,7 @@
 			</nav>
 		</div>	<!-- .container -->
 	</header>	<!-- .header -->
-<div id="content" class="site-content">
+<div id="content" class="site-content container">
 <?php /*
 	if ( ! is_front_page() ) {
 		?>

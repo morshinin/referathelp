@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' ); ?>
-
+	
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.
@@ -33,14 +33,14 @@ get_header( 'shop' ); ?>
 	?>
 
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-			<section class="row">
-			  <div class="small-12 columns text-center">
-			    <div class="leader">
+			<section class="rh-shop" id="referathelp_shop">
+				<!-- <div class="container"> -->
+					<div class="row">
 					
-					<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
-
-				</div>
-			  </div>
+					<h1 class="page-title text-center"><?php woocommerce_page_title(); ?></h1>
+			
+					</div>	<!-- .row -->
+			  	<!-- </div> -->
 			</section>
 		<?php endif; ?>
 
@@ -102,6 +102,7 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_after_main_content' );
 	?>
 
+	<!-- <div class="col-md-4"> -->
 	<?php
 		/**
 		 * woocommerce_sidebar hook.
@@ -110,5 +111,5 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_sidebar' );
 	?>
-
+	<!-- </div>	.col-md-4 -->
 <?php get_footer( 'shop' ); ?>
