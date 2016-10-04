@@ -7,20 +7,34 @@
 * @since referathelp 1.0
 */
 ?>
+<?php 
+	if ( is_front_page() ) {
+?>
 <section class="workflow main-margin" id="referathelp_workflow">
+<?php } else { ?>
+<section class="workflow">
+<?php } ?>
 	<div class="container">
 		<div class="row">
+		<?php 
+			if ( is_front_page() ) {
+		?>
 			<h2 class="text-center">
+		<?php } else { ?>
+			<h2 class="text-center margin-third">
+		<?php } ?>
 				<?php _e( 'Схема работы', 'referathelp' ); ?>
 			</h2>
 		</div>
-		<div class="row">
 			<?php 
 				if ( ! is_front_page() ) {
+			?>
+		<div class="row">
+			<?php
 					the_content();
-				}
 			?>
 		</div>
+		<?php } ?>
 		<div class="row margin-secondary">
 			<div class="col-md-6">
 				<div class="col-md-3">

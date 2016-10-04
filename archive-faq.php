@@ -27,7 +27,7 @@ get_header(); ?>
 				$query->the_post();
 
 				$id = get_the_ID();
-				$a = '<h3><a data-toggle="collapse" href="#collapse-' . $id . '" aria-expanded="false" aria-controls="collapseExample">' . get_the_title() . '</a></h3>
+				$a = '<h3 class="archive_title-faq"><a data-toggle="collapse" href="#collapse-' . $id . '" aria-expanded="false" aria-controls="collapseExample">' . get_the_title() . '</a></h3>
 						<div class="entry-content collapse" id="collapse-' . $id . '">
 							<div class="well">' . get_the_content() . '</div>
 					</div>';

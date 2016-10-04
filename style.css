@@ -581,7 +581,7 @@ h2 {
 	padding: 160px 0;
 }
 .main-padding-jumbotron {
-	padding: 240px 0 160px;
+	padding: 240px 0;
 }
 .main-margin {
 	margin-bottom: 160px;
@@ -668,7 +668,6 @@ h2 {
 /* Shop */
 .rh_shop_search {
 	text-align: center;
-	
 }
 .rh_shop_search ul {
 	display: block;
@@ -685,6 +684,10 @@ h2 {
 .rh_shop_search ul > li:nth-child(2),
 .rh_shop_search ul > li:nth-child(3) {
 	width: 50%;
+}
+aside .rh_shop_search ul > li:nth-child(2),
+aside .rh_shop_search ul > li:nth-child(3) {
+	width: 100%;
 }
 .rh_shop_search ul > li:first-child input[type="text"],
 .rh_shop_search ul > li:nth-child(2) select,
@@ -733,4 +736,37 @@ h2 {
         padding-left: 64px;
     padding-right: 64px;
     font-weight: lighter;
+}
+aside .rh_shop_search input[type="submit"] {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    background-image: none;
+    /*padding: 6px 12px;*/
+}
+/* Иконки в секции услуги и цены */
+.services_img {
+	margin: 0 auto 48px;
+}
+/* Делаем управление слайдером карусель позаметнее */
+.slick-prev,
+.slick-next {
+	background: silver;
+	width: 23px;
+    height: 23px;
+    border-radius: 50%;
+}
+.slick-prev:hover, 
+.slick-prev:focus, 
+.slick-next:hover, 
+.slick-next:focus {
+	background: #666;
+}
+/* Заголовки на странице вопрос-ответ поменьше */
+.archive_title-faq {
+	font-size: 18px;
+}
+/* Иконки в секции Наши преимущества на отдельной странице */
+.benefits_img-page {
+	padding-top: 48px;
 }

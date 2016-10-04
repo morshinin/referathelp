@@ -87,17 +87,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
 		
-  <?php /*the_field( 'rh_work_intro' );*/ ?>
 				</div>	
 
-		  <!-- </div> -->
- <!--  </div> -->
   <div class="col-md-4">
   <table class="table">
   	<tbody>
   		<?php 
   			// $value = array( 'landing_cost', 'landing_time', 'landing_author' );
   			$fields = get_fields();
+  			// var_dump($fields);
   			// $t_heading = array( 'Цена', 'Срок выполнения', 'Автор', 'Доработка', 'Гарантия' );
   			/**
   			 * Собираем все кастомные метаполя и выводим их в таблице. Здесь используются теги плагина Advanced Custom Fields.
@@ -105,18 +103,21 @@ if ( ! defined( 'ABSPATH' ) ) {
   			if ( $fields ) {
   				foreach ($fields as $field_name => $value) {
   					$f_obj = get_field_object( $field_name, false, array( 'load_value' => false ) );
-  					// $f_label = get_field_object();
+  					if ( $field_name !== 'rh_work_intro' && $field_name !== 'rh_work_soderj' && $field_name !== 'rh_work_lib' ) {
   					?>
   					<tr>
   						<th>
-  							<?php /*_e( 'Цена', 'referathelp' );*/ ?>
-  							<?php echo $f_obj['label']; ?>
+  							<?php 
+  							
+  							echo $f_obj['label'];
+  							 ?>
   						</th>
   						<td>
   							<?php echo $value; ?>
   						</td>
   					</tr>
   					<?php
+  				}/* endif */
   				}
   			}
   		 ?>
@@ -124,8 +125,5 @@ if ( ! defined( 'ABSPATH' ) ) {
   </table>
 <?php do_action( 'woocommerce_show_fucking_price' ); ?>
 </div>
-<!-- </section> -->
-</div><!-- #product-<?php the_ID(); ?> -->
-<!-- <div class="col-md-4"> -->
+</div>
 <?php do_action( 'woocommerce_after_single_product' ); ?>
-<!-- </div> -->

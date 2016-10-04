@@ -87,9 +87,11 @@ global $post, $product;
 			<?php echo $product->get_categories( '', 'Предмет: ' ); ?>
 		</div>
 		<div class="col-md-4">
-			<?php echo get_the_date(); ?>
+			<?php _e( 'Дата добавления: ', 'referathelp' ); echo get_the_date(); ?>
 		</div>
-		<div class="col-md-4"></div>
+		<div class="col-md-4">
+            <?php _e( 'Страниц: ', 'referathelp' ); the_field( 'rh_work_page_count' ); ?>      
+        </div>
 	</div>
  
 </div>
