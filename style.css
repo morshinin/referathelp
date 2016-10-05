@@ -446,7 +446,8 @@ body {
 
 .jumbotron .jumbotron_title,
 h1,
-h2 {
+h2,
+.widget-title {
 	font-weight: lighter;
 	letter-spacing: 1.6px;
 }
@@ -769,4 +770,53 @@ aside .rh_shop_search input[type="submit"] {
 /* Иконки в секции Наши преимущества на отдельной странице */
 .benefits_img-page {
 	padding-top: 48px;
+}
+/* Цену на странице товара побольше размером */
+.woocommerce div.product p.price {
+	font-size: 2em;
+}
+/* Цена на странице каталога */
+.woocommerce .products .price {
+	font-size: 2.5rem;
+}
+@media screen and (min-width: 768px) {
+	.woocommerce .products .price {
+		padding-top: 32px;
+	}
+}
+/* Один товар в каталоге */
+.woocommerce div.rh-catalog_product {
+	margin-bottom: 16px;
+}
+/* Заголовок работы в каталоге */
+.rh-catalog_title-wrapper {
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+/* Отступ сверху для боковой колонки на странице работы */
+@media screen and (min-width: 768px) {
+	.rh-single-product_sidebar {
+		padding-top: 150px;
+	}
+}
+/* Метаданные работы в каталоге */
+.rh-product-description-catalog {
+	font-size: 12px;
+}
+/* Хлебные крошки */
+.woocommerce .woocommerce-breadcrumb,
+.woocommerce-breadcrumb {
+	margin: 1em 0;
+}
+/* Боковая колонка на страницах каталога */
+@media screen and (min-width: 768px) {
+	.woocommerce #secondary {
+		padding-top: 91px;
+	}
+}
+/* Основная область контента */
+@media screen and (min-width: 768px) {
+	.site-main {
+		margin-bottom: 48px;
+	}
 }

@@ -32,24 +32,31 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 ?>
  
  
-<div <?php post_class('col-md-12'); ?>>
- 
- <?php 
-global $post, $product;
-	echo $product->get_tags(); ?>
-	<small>
-		<?php _e( 'по теме:', 'referathelp' ); ?>
-	</small>
+<div <?php post_class('col-md-12 well rh-catalog_product'); ?>>
+    <div class="row">
+        <div class="col-md-12">
+            <?php 
+                global $post, $product;
+	            echo $product->get_tags(); 
+            ?>
+            <small>
+	          <?php _e( 'по теме:', 'referathelp' ); ?>
+            </small>
+        </div>  <!-- .col-md-12 -->
+    </div>  <!-- .row -->
+    <div class="row">
+        <div class="col-md-9">
     <?php
    
- 
     /**
      * woocommerce_before_shop_loop_item hook.
      *
      * @hooked woocommerce_template_loop_product_link_open - 10
      */
     do_action( 'woocommerce_before_shop_loop_item' );
-   
+   ?>
+  
+   <?php
     /**
      * woocommerce_before_shop_loop_item_title hook.
      *
@@ -82,20 +89,30 @@ global $post, $product;
     do_action( 'woocommerce_after_shop_loop_item' );
  
     ?>
- 	<div class="row">
-		<div class="col-md-4">
-			<?php echo $product->get_categories( '', 'Предмет: ' ); ?>
-		</div>
-		<div class="col-md-4">
-			<?php _e( 'Дата добавления: ', 'referathelp' ); echo get_the_date(); ?>
-		</div>
-		<div class="col-md-4">
-            <?php _e( 'Страниц: ', 'referathelp' ); the_field( 'rh_work_page_count' ); ?>      
+    <div class="row rh-product-description-catalog">
+            <div class="col-md-4">
+            <?php echo $product->get_categories( '', 'Предмет: ' ); ?>
         </div>
-	</div>
+        <div class="col-md-4">
+            <?php _e( 'Дата добавления: ', 'referathelp' ); echo get_the_date(); ?>
+        </div>
+        <div class="col-md-4">
+            <?php _e( 'Страниц: ', 'referathelp' ); the_field( 'rh_work_page_count' ); ?>
+        </div>
+        </div>  <!-- .row -->
+        </div>  <!-- .col-md-9 -->
+        <?php do_action( 'rh_after_shop_loop_price' ); ?>
+        <div class="col-md-3">
+            <?php do_action( 'rh_after_shop_loop_add_to_cart' ); ?>
+        </div>
+    </div>  <!-- .row -->
+
+
  
-</div>
+</div>  <!-- .post-class -->
  
-<?php if($woocommerce_loop['loop'] % 4 === 0) {  echo '</div><div class="row">';} ?>
+<?php 
+// if($woocommerce_loop['loop'] % 4 === 0) {  echo '</div><div class="row">';} 
+?>
   
 

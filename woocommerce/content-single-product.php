@@ -89,7 +89,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		
 				</div>	
 
-  <div class="col-md-4">
+  <div class="col-md-4 rh-single-product_sidebar">
   <table class="table">
   	<tbody>
   		<?php 

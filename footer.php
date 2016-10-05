@@ -29,8 +29,8 @@
 			</div>
 			<div class="row">
 				<p>
-					<?php _e( 'Посмотрите готовые работы в нашем ', 'referathelp' ); ?>
-					<a href="#" class="btn btn-link">
+					<?php _e( 'Посмотрите готовые работы в нашем', 'referathelp' ); ?>
+					<a href="<?php echo esc_url(home_url('/shop')); ?>" class="btn btn-link">
 						<?php _e( 'Магазине готовых работ', 'referathelp' ); ?>
 					</a>
 				</p>

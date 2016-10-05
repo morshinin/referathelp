@@ -12,7 +12,7 @@
   	</div>
   <?php endif; ?>
   <div class="text-center">
-  	<a class="btn btn-success btn-lg btn-xxl" href="#" role="button">
+  	<a class="btn btn-success btn-lg btn-xxl eModal-1" href="#" role="button">
   		<?php _e( 'Заказать', 'referathelp' ); ?>
   	</a>
   </div>

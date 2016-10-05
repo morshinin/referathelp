@@ -14,5 +14,5 @@
 
 
 
-				get_template_part( 'archive', 'faq' );
+				get_template_part( 'archive', 'faq' ); ?>
 

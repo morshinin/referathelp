@@ -10,6 +10,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area container">
+	<?php woocommerce_breadcrumb(); ?>
 		<main id="main" class="site-main col-md-8" role="main">
 
 				
@@ -53,7 +54,7 @@ get_header(); ?>
 		</main><!-- #main -->
 		<?php get_sidebar(); ?>
 	</div><!-- #primary -->
-
+<?php get_template_part( 'partials/content', 'cta3' ); ?>
 <?php
 
 get_footer();

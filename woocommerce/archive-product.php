@@ -33,13 +33,13 @@ get_header( 'shop' ); ?>
 	?>
 
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-			<section class="rh-shop" id="referathelp_shop">
+			<section class="rh-shop row" id="referathelp_shop">
 				<!-- <div class="container"> -->
-					<div class="row">
+					<!-- <div class="row"> -->
 					
 					<h1 class="page-title text-center"><?php woocommerce_page_title(); ?></h1>
 			
-					</div>	<!-- .row -->
+					<!-- </div>	.row -->
 			  	<!-- </div> -->
 			</section>
 		<?php endif; ?>

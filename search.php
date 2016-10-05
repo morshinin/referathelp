@@ -7,7 +7,8 @@
  * @package referathelp
  */
 
-get_header(); ?>
+// get_header();
+ ?>
 
 	<?php get_template_part( 'woocommerce/archive', 'product' ); /*?>
 	<section id="primary" class="content-area">
@@ -45,5 +46,5 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 <?php */
-get_sidebar();
-get_footer();
+// get_sidebar();
+// get_footer();

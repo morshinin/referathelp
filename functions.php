@@ -362,6 +362,14 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 3
 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+// Убираем цену из ее стандартной позиции в каталоге товаров
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+// Вставляем цену на другую позицию в каталоге товаров
+add_action( 'rh_after_shop_loop_price', 'woocommerce_template_loop_price', 10 );
+// Убираем кнопку Добавить в корзину из ее стандартной позиции в каталоге товаров
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+// Вставляем кнопку Добавить в корзину на другую позицию в каталоге товаров
+add_action( 'rh_after_shop_loop_add_to_cart', 'woocommerce_template_loop_add_to_cart', 10 );
 // remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
@@ -382,6 +390,32 @@ add_action( 'wpt_footer', 'wpt_footer_cart_link' );
 add_action( 'woocommerce_show_fucking_price', 'woocommerce_template_single_price', 10 );
 // Добавляем кнопку добавить в корзину на странице работы
 add_action( 'woocommerce_show_fucking_price', 'woocommerce_template_single_add_to_cart', 30 );
+
+// Меняем разметку для заголовка работы в каталоге
+add_filter( 'woocommerce_before_shop_loop_item', 'referathelp_template_loop_product_link_open' );
+if (  ! function_exists( 'referathelp_template_loop_product_link_open' ) ) {
+
+	/**
+	 * Insert the opening anchor tag for products in the loop.
+	 */
+	function referathelp_template_loop_product_link_open() {
+		echo '<div class="row">';
+		echo '<div class="col-md-12 rh-catalog_title-wrapper">';
+		echo '<a href="' . get_the_permalink() . '" class="woocommerce-LoopProduct-link">';
+	}
+}
+add_filter( 'woocommerce_after_shop_loop_item', 'referathelp_template_loop_product_link_close' );
+if (  ! function_exists( 'referathelp_template_loop_product_link_close' ) ) {
+
+	/**
+	 * Insert the close anchor tag for products in the loop.
+	 */
+	function referathelp_template_loop_product_link_close() {
+		echo '</a>';
+		echo '</div>';
+		echo '</div>';
+	}
+}
 
 // Change number or products per row to 1
 add_filter('loop_shop_columns', 'loop_columns');
