@@ -589,3 +589,20 @@ function my_function_admin_bar() {
 	return false;
 }
 add_filter( 'show_admin_bar' , 'my_function_admin_bar');
+
+/**
+ * Шорткод для сообщения предупреждения
+ */
+function rh_warning_message( $atts, $content = null ) {
+	return '<div class="panel panel-warning">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						Внимание!
+					</h4>
+				</div>
+				<div class="panel-body">'
+					. $content . 
+				'</div>
+			</div>';
+}
+add_shortcode( 'warning', 'rh_warning_message' );
