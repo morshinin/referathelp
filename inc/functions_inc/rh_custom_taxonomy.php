@@ -34,12 +34,13 @@ function referathelp_tax_type() {
 			'not_found'		=>	__( 'Типов работ не найдено', 'referathelp' )	
 		);
 	$args = array(
-			'labels'		=>	$labels,
-			'hierarchical'	=>	true,
-			'query_var'		=>	true,
-			'rewrite'		=>	true
+			'labels'				=>	$labels,
+			'hierarchical'			=>	false,
+			'query_var'				=>	true,
+			'rewrite'				=>	true,
+			'update_count_callback'	=>	'_update_post_term_count'
 		);
-	register_taxonomy( 'customworktype', 'landing', $args );
-	register_taxonomy_for_object_type( 'customworktype', 'landing' );
+	register_taxonomy( 'customworktype', array('landing', 'faq', 'rh_testimonials'), $args );
+	register_taxonomy_for_object_type( 'customworktype', array('landing', 'faq', 'rh_testimonials') );
 }
 ?>

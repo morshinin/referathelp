@@ -18,8 +18,10 @@
 			<?php 
 				global $post;
 				if ( is_front_page() ) {
+					// на главной странице отображаем только два отзыва
 					$post_count = 2;
 				} else {
+					// на всех остальных страницах все отзывы
 					$post_count = -1;
 				}
 				$args = array( 'posts_per_page' => $post_count, 'post_type' => 'rh_testimonials' );
@@ -52,6 +54,7 @@
 					
 				} 
 					else {
+						// если записей отзывов нет, выводим тестовые записи
 					?>
 					<blockquote class="col-md-6">
 						<div class="col-md-3">
