@@ -19,7 +19,8 @@
 		</h3>
 		<?php echo do_shortcode( '[contact-form-7 id="312" title="Форма захвата на статичных страницах"]' ); ?>
 		<p>
-			<?php _e( 'или позвоните по телефону +7 (905) 763 43 52', 'referathelp' ); ?>
+			<?php _e( 'или позвоните по телефону ', 'referathelp' ); ?>
+			<?php if(function_exists('show_text_block')) { echo show_text_block('telefon', true); } ?>
 		</p>
 	</div>
 </div>

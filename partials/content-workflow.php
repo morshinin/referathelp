@@ -49,7 +49,8 @@
 						<?php _e( 'Оформить заказ можно двумя способами:', 'referathelp' ); ?>
 						<ul>
 							<li>
-								<?php _e( 'Позвонив по телефону +7 (905) 763 43 52', 'referathelp' ); ?>
+								<?php _e( 'Позвонив по телефону ', 'referathelp' ); ?>
+							<?php if(function_exists('show_text_block')) { echo show_text_block('telefon', true); } ?>
 							</li>
 							<li>
 								<?php _e( 'Заполнив ', 'referathelp' ); ?>

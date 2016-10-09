@@ -57,9 +57,10 @@
 					endif; ?>
 			    
 			  </div>	<!-- .navbar-header -->
-<!-- 			  <p class="navbar-text navbar-right">
-			  	<?php _e( '+7 (905) 763 43 52', 'referathelp' ); ?>
-			  </p>  -->
+			  <p class="navbar-text navbar-right">
+			  	<?php if(function_exists('show_text_block')) { echo show_text_block('telefon', true); } ?>
+			  	<?php /*_e( '+7 (905) 763 43 52', 'referathelp' );*/ ?>
+			  </p> 
 			  <!-- Collect the nav links, forms, and other content for toggling --> 
 			    <?php /* Primary navigation */
 			    wp_nav_menu( array(
