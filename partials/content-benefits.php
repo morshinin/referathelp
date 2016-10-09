@@ -18,7 +18,7 @@ if ( is_front_page() ) { ?>
 			</h2>
 		</div>
 		<div class="row">
-			<div class="col-sm-6 col-md-4">
+			<div class="col-sm-6 col-md-4 benefits_item">
 				<h3 class="text-center margin-third">
 					<?php _e( 'Работа под ключ', 'referathelp' ); ?>
 				</h3>
@@ -29,7 +29,7 @@ if ( is_front_page() ) { ?>
 					</p>
 				</div>
 			</div>
-			<div class="col-sm-6 col-md-4">
+			<div class="col-sm-6 col-md-4 benefits_item">
 				<h3 class="text-center margin-third">
 					<?php _e( 'Без посредников', 'referathelp' ); ?>
 				</h3>
@@ -40,7 +40,7 @@ if ( is_front_page() ) { ?>
 					</p>
 				</div>
 			</div>
-			<div class="col-sm-6 col-md-4">
+			<div class="col-sm-6 col-md-4 benefits_item">
 				<h3 class="text-center margin-third">
 					<?php _e( 'Конфиденциально', 'referathelp' ); ?>
 				</h3>
