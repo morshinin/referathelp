@@ -22,7 +22,7 @@ function referathelp_reg_post_types() {
 			'labels'				=>	$labels,
 			'description'			=>	__( 'Посадочные страницы для продвижения услуги написания работ на заказ', 'referathelp' ),
 			'public'				=>	true,
-			'has_archive'			=>	true,
+			'has_archive'			=>	false,
 			'menu_position'			=>	5,
 			'menu_icon'				=>	'dashicons-id-alt',
 			'supports'				=>	array( 'title', 'editor', 'thumbnail' )

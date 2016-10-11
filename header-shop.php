@@ -34,14 +34,27 @@
 			      <span class="icon-bar"></span> 
 			    </button> 
 			    
-					<?php
+					<?php /*
 					if ( is_front_page() && is_home() ) : ?>
 						<h1><a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php else : ?>
 						<p><a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 					<?php
-					endif; ?>
-			    </a> 
+					endif; */ ?>
+			    <!-- </a>  -->
+			        <?php 
+			        	if(get_theme_mod('referathelp_logo')) :
+			        	       ?>
+			        	      <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" class="navbar-brand" rel="home"><img src="<?php echo esc_url(get_theme_mod('referathelp_logo')); ?>" alt="" class="logo_img"></a>
+			        	     <?php else : ?>
+			        	     	<?php 
+			    		if ( is_front_page() && is_home() ) : ?>
+			    			<h1><a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			    		<?php else : ?>
+			    			<p><a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+			    		<?php
+			    		endif; 
+			    		endif; ?>
 			  </div>	<!-- .navbar-header -->
 <!-- 			  <p class="navbar-text navbar-right">
 			  	<?php _e( '+7 (905) 763 43 52', 'referathelp' ); ?>

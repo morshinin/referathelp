@@ -20,7 +20,7 @@ if ( is_front_page() ) { ?>
 			<div class="services_carousel">
 				<?php 
 					global $post;
-					$args = array( 'posts_per_page' => 8, 'post_type' => 'landing' );
+					$args = array( 'posts_per_page' => 8, 'post_type' => 'landing', 'order' => 'ASC' );
 					$landing_posts = get_posts( $args );
 					if ( $posts ) {
 						foreach ( $landing_posts as $post ) : setup_postdata( $post );
@@ -47,7 +47,7 @@ if ( is_front_page() ) { ?>
 								<p>
 									<?php echo $field_2['value']; ?>
 								</p>
-								<p><a href="<?php echo $link; ?>" class="btn btn-link"><?php _e( 'Заказать >>', 'referathelp' ); ?></a></p>
+								<p><a href="<?php echo $link; ?>" class="btn btn-link"><?php _e( 'Подробнее >>', 'referathelp' ); ?></a></p>
 							</div>
 						</div>
 						<?php
@@ -82,7 +82,7 @@ if ( is_front_page() ) { ?>
 		</tr>
 				<?php 
 					global $post;
-					$args = array( 'posts_per_page' => 8, 'post_type' => 'landing' );
+					$args = array( 'posts_per_page' => 8, 'post_type' => 'landing', 'order' => 'ASC' );
 					$landing_posts = get_posts( $args );
 					if ( $posts ) {
 						foreach ( $landing_posts as $post ) : setup_postdata( $post );
