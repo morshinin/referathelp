@@ -29,7 +29,11 @@ get_header(); ?>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<?php echo do_shortcode( '[searchandfilter fields="search,product_cat,product_tag" submit_label="Найти" class="rh_shop_search" search_placeholder="Введите тему" taxonomies="product_tag,product_cat" post_types="product"]' ); ?>
+						<?php 
+						if ( shortcode_exists( 'searchandfilter' ) ) {
+						echo do_shortcode( '[searchandfilter fields="search,product_cat,product_tag" submit_label="Найти" class="rh_shop_search" search_placeholder="Введите тему" taxonomies="product_tag,product_cat" post_types="product" hierarchical=",1"]' );
+						}
+						?>
 					</div>
 						
 				</div>	<!-- .row -->

@@ -39,6 +39,7 @@ add_action( 'woocommerce_show_fucking_price', 'woocommerce_template_single_price
 add_action( 'woocommerce_show_fucking_price', 'woocommerce_template_single_add_to_cart', 30 );
 
 // Меняем разметку для заголовка работы в каталоге
+remove_filter( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open' );
 add_filter( 'woocommerce_before_shop_loop_item', 'referathelp_template_loop_product_link_open' );
 if (  ! function_exists( 'referathelp_template_loop_product_link_open' ) ) {
 
@@ -51,6 +52,7 @@ if (  ! function_exists( 'referathelp_template_loop_product_link_open' ) ) {
 		echo '<a href="' . get_the_permalink() . '" class="woocommerce-LoopProduct-link">';
 	}
 }
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close' );
 add_filter( 'woocommerce_after_shop_loop_item', 'referathelp_template_loop_product_link_close' );
 if (  ! function_exists( 'referathelp_template_loop_product_link_close' ) ) {
 
@@ -58,7 +60,7 @@ if (  ! function_exists( 'referathelp_template_loop_product_link_close' ) ) {
 	 * Insert the close anchor tag for products in the loop.
 	 */
 	function referathelp_template_loop_product_link_close() {
-		echo '</a>';
+		// echo '</a>';
 		echo '</div>';
 		echo '</div>';
 	}

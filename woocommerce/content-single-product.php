@@ -103,7 +103,9 @@ if ( ! defined( 'ABSPATH' ) ) {
   			if ( $fields ) {
   				foreach ($fields as $field_name => $value) {
   					$f_obj = get_field_object( $field_name, false, array( 'load_value' => false ) );
+  					// Исключаем поля для введения, содержания и списка литературы, т.к. они выводятся во вкладках
   					if ( $field_name !== 'rh_work_intro' && $field_name !== 'rh_work_soderj' && $field_name !== 'rh_work_lib' ) {
+  						if ( $value ) {
   					?>
   					<tr>
   						<th>
@@ -116,7 +118,7 @@ if ( ! defined( 'ABSPATH' ) ) {
   							<?php echo $value; ?>
   						</td>
   					</tr>
-  					<?php
+  					<?php }
   				}/* endif */
   				}
   			}

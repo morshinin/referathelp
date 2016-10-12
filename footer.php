@@ -49,9 +49,16 @@
 			</div>
 			<div class="row">
 				<div class="site-info text-center">
-					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'referathelp' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'referathelp' ), 'WordPress' ); ?></a>
+					<p>
+						<small>
+							<?php printf( esc_html__( 'Все права защищены &copy; %2s', 'referathelp' ), date( 'Y' ) ); ?>
+						</small>
+					
 					<span class="sep"> | </span>
-					<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'referathelp' ), 'referathelp', '<a href="http://morshinin.ru/front-end" rel="designer">Mikhail Morshinin</a>' ); ?>
+						<small>
+					<?php printf( esc_html__( 'Разработка сайта: %2s.', 'referathelp' ),  '<a href="http://morshinin.ru/front-end" rel="designer">Morshinin</a>' ); ?>
+						</small>
+					</p>
 				</div><!-- .site-info -->
 			</div>	<!-- .row -->
 		</div>	<!-- .container -->

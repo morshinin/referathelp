@@ -166,3 +166,20 @@ add_action('customize_register', 'referathelp_theme_customizer');
  * Шорткоды
  */
 require_once get_template_directory() . '/inc/functions_inc/rh_shortcodes.php';
+
+/**
+ * Форма комментариев
+ */
+add_filter( 'comment_form_defaults', 'cd_pre_comment_text' );
+/**
+ * Change the text output that appears before the comment form
+ * Note: Logged in user will not see this text.
+ * 
+ * @author Carrie Dils <http://www.carriedils.com>
+ * @uses comment_notes_before <http://codex.wordpress.org/Function_Reference/comment_form>
+ * 
+ */
+function cd_pre_comment_text( $arg ) {
+  $arg['comment_notes_before'] = '<p class="comment-notes"><small id="email-notes">' . __( 'Your email address will not be published.' ) . __( ' Поля помеченные * обязательны для заполнения.' ) . '</small></p>';
+  return $arg;
+}
