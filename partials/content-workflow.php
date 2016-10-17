@@ -36,7 +36,7 @@
 		</div>
 		<?php } ?>
 		<div class="row margin-secondary">
-			<div class="col-md-6">
+			<div class="col-sm-6">
 				<div class="col-md-3">
 					<p class="workflow_number workflow_number-1">
 					</p>
@@ -64,7 +64,7 @@
 					</p>
 				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-sm-6">
 				<div class="col-md-3">
 					<p class="workflow_number workflow_number-2">
 					</p>
@@ -80,7 +80,7 @@
 			</div>
 		</div>	<!-- .row -->
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-sm-6">
 				<div class="col-md-3">
 					<p class="workflow_number workflow_number-3">
 					</p>
@@ -94,7 +94,7 @@
 					</p>
 				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-sm-6">
 				<div class="col-md-3">
 					<p class="workflow_number">
 					</p>

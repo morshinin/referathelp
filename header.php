@@ -57,7 +57,7 @@
 					endif; ?>
 			    
 			  </div>	<!-- .navbar-header -->
-			  <p class="navbar-text navbar-right hidden-xs">
+			  <p class="navbar-text navbar-right hidden-xs hidden-sm">
 			  	<?php if(function_exists('show_text_block')) { echo show_text_block('telefon', true); } ?>
 			  	<?php /*_e( '+7 (905) 763 43 52', 'referathelp' );*/ ?>
 			  </p> 

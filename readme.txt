@@ -29,7 +29,14 @@ referathelp includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.0.1 - October 17 2016 =
+
+- Убрал телефон на маленьких экранах, чтобы меню не съезжало вниз
+- Добавил перевод с английского на русский
+- Поправил отображение на маленьких мониторах
+- Добавлен скриншот
+
+= 1.0 - October 12 2016 =
 * Initial release
 
 == Credits ==

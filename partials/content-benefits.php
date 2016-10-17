@@ -18,7 +18,7 @@ if ( is_front_page() ) { ?>
 			</h2>
 		</div>
 		<div class="row">
-			<div class="col-sm-6 col-md-4 benefits_item">
+			<div class="col-md-4 benefits_item">
 				<h3 class="text-center margin-third">
 					<?php _e( 'Работа под ключ', 'referathelp' ); ?>
 				</h3>
